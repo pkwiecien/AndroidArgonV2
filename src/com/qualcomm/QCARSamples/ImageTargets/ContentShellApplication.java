@@ -4,11 +4,10 @@
 
 package com.qualcomm.QCARSamples.ImageTargets;
 
-import android.app.Application;
-
 import org.chromium.base.PathUtils;
-import org.chromium.content.app.LibraryLoader;
 import org.chromium.content.browser.ResourceExtractor;
+
+import android.app.Application;
 
 /**
  * Entry point for the content shell application.  Handles initialization of information that needs

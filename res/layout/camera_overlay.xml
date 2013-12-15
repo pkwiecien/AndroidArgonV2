@@ -11,14 +11,22 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true" />
 
-    <fragment
-        android:id="@+id/my_webview"
-        android:name="com.qualcomm.QCARSamples.ImageTargets.ContentShellFragment"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_margin="50dp" >
-    </fragment>
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:weightSum="1"
+        android:baselineAligned="false" >
+
+        <fragment
+            android:id="@+id/my_webview"
+            android:name="com.qualcomm.QCARSamples.ImageTargets.ContentShellFragment"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5" >
+        </fragment>
+    </LinearLayout>
 
 </RelativeLayout>
