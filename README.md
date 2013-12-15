@@ -13,11 +13,22 @@ In this project I used ImageTargets project provided with vuforia [2].
 * Pull repository with libraries with custom chromium built: https://github.com/pkwiecien/AndroidArgon-libraries
 * Pull this repository
 * Open ADT (or eclipse with ADT), install vuforia if needed (see requirements below)
-* Import libraries to workspace as existing projects into ADT
+* Import libraries to workspace as existing projects into ADT (if projects contain any errors, see section below)
 * Import AndroidArgon as exisiting Android project into ADT
+* Add libraries to the AndroidArgon project (right click on a project->Properties->Android. If there are any invalid libraries in red then remove them, and add these new ones. In total there are 6 libraries)
 * Add QCAR_SDK_ROOT into Java Build Path, see: Section "Set the QCAR environment variable" 
 in https://developer.vuforia.com/resources/dev-guide/step-2-installing-vuforia-sdk
+* Add QCAR.jar to Java Build Path (it is in vuforia/build/java/QCAR)
 * Run project as Android application
+
+#### Troubleshooting
+
+Importing libraries:
+* firstly do a clean of your workspace in ADT
+* if a project is not compiled, check a reason. If it says that a folder 'res' is missing, add it to each folder manually (when I was importing libraries, I had to add folder res to 'base', 'content', 'net' and 'ui' library projects. Next, refresh all projects and do a clean once again)
+
+Importing/Running AndroidArgonV2 project:
+* If a project crashes after a start, you might need to add a 'clean' version of .so file (chromium built). Download it from here: [libcontent](https://www.dropbox.com/s/7wvh5hopjr2xbea/libcontent_shell_content_view.so). Next copy it to libs/armeabi, libs/armeabi-v7a, libs/x86 in AndroidArgonV2 project in ADT
 
 #### Preview
 ![Alt text](https://raw.github.com/pkwiecien/AndroidArgonV2/master/Screenshots/device-2013-12-14-214554.png "Screenshot 1 - camera in the background with teapot, and webview with CSS3D Periodic table example")
